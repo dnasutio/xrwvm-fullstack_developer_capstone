@@ -143,7 +143,7 @@ def add_review(request):
     if not request.user.is_anonymous:
         data = json.loads(request.body)
         try:
-            response = post_review(data)
+            response = post_review(data) # noqa: F841
             return JsonResponse({"status": 200})
         except:  # noqa: E722
             return JsonResponse({
